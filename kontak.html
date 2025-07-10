@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak - Kampus Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 bg-white shadow z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+      <h1 class="text-xl font-bold text-blue-700">Kampus Digital</h1>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="index.html" class="hover:text-blue-600">Beranda</a>
+        <a href="tentang-kami.html" class="hover:text-blue-600">Tentang</a>
+        <a href="program-studi.html" class="hover:text-blue-600">Program Studi</a>
+        <a href="pmb.html" class="hover:text-blue-600">PMB</a>
+        <a href="kontak.html" class="text-blue-700 font-semibold border-b-2 border-blue-700 pb-1">Kontak</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-600 text-white py-16 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-2">Hubungi Kami</h2>
+    <p class="text-lg">Kami siap membantu menjawab pertanyaan Anda</p>
+  </section>
+
+  <!-- Kontak & Form -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+      
+      <!-- Informasi Kontak -->
+      <div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Informasi Kontak</h3>
+        <p class="mb-4 text-gray-700">Jika Anda memiliki pertanyaan tentang pendaftaran, program studi, atau lainnya, jangan ragu untuk menghubungi kami.</p>
+        
+        <ul class="space-y-4 text-gray-700">
+          <li><strong>Alamat:</strong> Jl. Pendidikan No. 1, Jakarta</li>
+          <li><strong>Email:</strong> info@kampusdigital.ac.id</li>
+          <li><strong>Telepon:</strong> (021) 123-4567</li>
+          <li><strong>Jam Operasional:</strong> Senin - Jumat, 08.00 - 16.00 WIB</li>
+        </ul>
+
+        <div class="mt-6">
+          <iframe
+            class="w-full h-64 rounded-lg shadow"
+            src="https://www.google.com/maps/embed?pb=!1m18!..." 
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Formulir Kontak -->
+      <div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Kirim Pesan</h3>
+        <form class="space-y-4">
+          <div>
+            <label class="block mb-1 font-medium">Nama Lengkap</label>
+            <input type="text" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+          </div>
+          <div>
+            <label class="block mb-1 font-medium">Email</label>
+            <input type="email" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+          </div>
+          <div>
+            <label class="block mb-1 font-medium">Pesan</label>
+            <textarea class="w-full border border-gray-300 p-3 rounded h-32 focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+          </div>
+          <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-200 py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h4 class="font-semibold mb-2">Kampus Digital</h4>
+        <p>Jl. Pendidikan No.1, Jakarta</p>
+        <p>Email: info@kampusdigital.ac.id</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Tautan</h4>
+        <ul>
+          <li><a href="tentang-kami.html" class="hover:text-white">Tentang</a></li>
+          <li><a href="program-studi.html" class="hover:text-white">Program Studi</a></li>
+          <li><a href="pmb.html" class="hover:text-white">PMB</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Sosial Media</h4>
+        <div class="space-x-4">
+          <a href="#" class="hover:text-white">Instagram</a>
+          <a href="#" class="hover:text-white">YouTube</a>
+          <a href="#" class="hover:text-white">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-sm text-gray-400 mt-6">
+      &copy; 2025 Kampus Digital. All rights reserved.
+    </div>
+  </footer>
+<script>
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nama = form.querySelector('input[type="text"]').value.trim();
+    const email = form.querySelector('input[type="email"]').value.trim();
+    const pesan = form.querySelector('textarea').value.trim();
+
+    if (nama === "" || email === "" || pesan === "") {
+      alert("Harap isi semua kolom sebelum mengirim pesan.");
+    } else {
+      alert("Pesan Anda terkirim. Balasan akan diberikan ± 24 jam.");
+      form.reset(); // Opsional: kosongkan form setelah submit
+    }
+  });
+</script>
+</body>
+</html>

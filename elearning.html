@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login E-Learning - Kampus Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen font-sans">
+
+  <!-- Container -->
+  <div class="w-full max-w-md bg-white rounded-lg shadow-md p-8">
+    <h2 class="text-2xl font-bold text-center text-blue-700 mb-6">Login E-Learning</h2>
+
+    <!-- Form Login -->
+    <form id="loginForm" class="space-y-6">
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email" name="email" required
+               class="mt-1 w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Kata Sandi</label>
+        <input type="password" id="password" name="password" required
+               class="mt-1 w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" class="rounded border-gray-300" />
+          <span>Ingat saya</span>
+        </label>
+        <a href="#" class="text-blue-600 hover:underline">Lupa sandi?</a>
+      </div>
+
+      <button type="submit"
+              class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition font-semibold">
+        Masuk
+      </button>
+    </form>
+
+    <!-- Footer -->
+    <p class="mt-6 text-sm text-center text-gray-500">
+      Belum punya akun? <a href="daftar.html" class="text-blue-600 hover:underline">Daftar di sini</a>
+    </p>
+  </div>
+
+  <!-- ✅ Script validasi & redirect -->
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Mencegah reload
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (email === '' || password === '') {
+        alert("Harap isi semua kolom dengan benar.");
+      } else {
+        // Jika semua kolom terisi, redirect ke halaman berhasil
+        window.location.href = "berhasil-elearning.html";
+      }
+    });
+  </script>
+
+</body>
+</html>
